@@ -30,4 +30,21 @@ class MessagesController extends Controller
 
       return view('messages')->with('messages',$messages);
     }
+
+    public function editMessages(Request $request){
+      $messages = Message::where('id',$request->id)->first();
+      return view('update')->with('messages',$messages);
+    }
+
+    public function messagesUpdate(Request $request){
+        $this->validate($request, [
+          'message' => 'required'
+        ]);
+        $messages = Message::where('id',$request->id)->first();
+         $message->message = $request->input('message');
+         $message->save();
+
+         //redirect
+         return redirect('/home')->with('success', 'Message Update');
+    }
 }

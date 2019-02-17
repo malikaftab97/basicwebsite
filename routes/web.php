@@ -25,3 +25,6 @@ Route::get('/about', function () {
 });
 Route::post('/contact/submit', 'MessagesController@submit');
 Route::get('/messages', 'MessagesController@getMessages');
+//Route::get('/update', 'MessagesController@updateMessages');
+Route::get('/update', array('uses' => 'MessagesController@editMessages', 'as' => 'update.message'));
+Route::post('messages/update', 'MessagesController@messagesUpdate');

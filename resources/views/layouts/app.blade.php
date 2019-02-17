@@ -5,6 +5,8 @@
   <title>BasicWebsite</title>
   <link rel="stylesheet" href="/css/app.css">
   <linl rel="js" href="/css/app.js">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/myScript.js"></script>
 </head>
 <body>
   @include('inc.navbar')
